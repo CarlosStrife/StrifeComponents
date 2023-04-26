@@ -6,13 +6,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
-function HomeScreen({ navigation }) {
+const Stack = createNativeStackNavigator();
+function PantallaPrincipal({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details', {
+        title="VER LOS COMPONENTES"
+        onPress={() => navigation.navigate('Componentes', {
           itemId: 86,
           otherParam: 'anything you want here',
         })}
@@ -21,34 +22,164 @@ function HomeScreen({ navigation }) {
   );
 }
 
-function DetailsScreen({ route, navigation }) {
+function PantallaComponentes({ route, navigation }) {
   //const { itemId, otherParam } = route.params;
+  //<Text style={{color: 'red'}}>otherParam: {JSON.stringify(otherParam)}</Text>
   return (
     <Drawer.Navigator>
-      
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Details" component={DetailsScreen} />
-    {/*<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{color: 'red'}}>Details Screen</Text>
-      <Text style={{color: 'red'}}>itemId: {JSON.stringify(itemId)}</Text>
-      <Text style={{color: 'red'}}>otherParam: {JSON.stringify(otherParam)}</Text>
-      <Button
-        title="Go to Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-  </View>*/}
+    <Drawer.Screen name="Input" component={PantallaInput} />
+      <Drawer.Screen name="Tabla" component={PantallaTabla} />
+      <Drawer.Screen name="Selector" component={PantallaSelector} />
+      <Drawer.Screen name="Switch" component={PantallaSwitch} />
+      <Drawer.Screen name="Alerta" component={PantallaAlerta} />
+      <Drawer.Screen name="Etiqueta" component={PantallaEtiqueta} />
+      <Drawer.Screen name="Boton" component={PantallaBoton} />
+      <Drawer.Screen name="Icono" component={PantallaIcono} />
+      <Drawer.Screen name="Imagen" component={PantallaImagen} />
+      <Drawer.Screen name="Video" component={PantallaVideo} />
+      <Drawer.Screen name="Radio" component={PantallaRadio} />
+      <Drawer.Screen name="Tabs" component={PantallaTabs} />
+      <Drawer.Screen name="Modal" component={PantallaModal} />
     </Drawer.Navigator>
   );
 }
-const Stack = createNativeStackNavigator();
 
+function PantallaInput({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        input
+      </Text>
+    </View>
+  );
+}
+
+function PantallaTabla({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        tabla
+      </Text>
+    </View>
+  );
+}
+
+function PantallaSelector({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        selector
+      </Text>
+    </View>
+  );
+}
+
+function PantallaSwitch({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        switch
+      </Text>
+    </View>
+  );
+}
+
+function PantallaAlerta({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        alerta
+      </Text>
+    </View>
+  );
+}
+
+function PantallaEtiqueta({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        etiqueta
+      </Text>
+    </View>
+  );
+}
+
+function PantallaBoton({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        boton
+      </Text>
+    </View>
+  );
+}
+
+function PantallaIcono({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        icono
+      </Text>
+    </View>
+  );
+}
+
+function PantallaImagen({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        imagen
+      </Text>
+    </View>
+  );
+}
+
+function PantallaVideo({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        video
+      </Text>
+    </View>
+  );
+}
+
+function PantallaRadio({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        radio
+      </Text>
+    </View>
+  );
+}
+
+function PantallaTabs({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        tabs
+      </Text>
+    </View>
+  );
+}
+
+function PantallaModal({ navigation }) {
+  return (
+    <View>
+      <Text style={{color: 'red'}}>
+        modal
+      </Text>
+    </View>
+  );
+}
 function App(): JSX.Element {
 
   return (
     <NavigationContainer>{    
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Principal" component={PantallaPrincipal} />
+        <Stack.Screen name="Componentes" component={PantallaComponentes} />
       </Stack.Navigator>
     }</NavigationContainer>
   );
