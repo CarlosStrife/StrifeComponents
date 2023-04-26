@@ -17,3 +17,7 @@ module.exports = {
 };
 y resetea esta mierda con 
 npx react-native start --reset-cache
+
+
+react-native-elements añadir
+react-native-vector-icons/FontAwesome añadir
