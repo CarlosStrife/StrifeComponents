@@ -19,7 +19,6 @@ import Tabla from './tabla';
 import Tabs from './tabs';
 import Tarjeta from './tarjeta';
 import Video from './video';
-import Buscador from './buscador';
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -62,7 +61,6 @@ export default class Inicio extends React.Component{
                         <Drawer.Screen name="Tabs" component={Tabs} />
                         <Drawer.Screen name="Tarjeta" component={Tarjeta} />
                         <Drawer.Screen name="Video" component={Video} />
-                        <Drawer.Screen name="Buscador" component={Buscador} />
                     </Drawer.Navigator>
                 }
             </NavigationContainer>
