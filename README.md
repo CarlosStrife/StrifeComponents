@@ -26,6 +26,7 @@ Path Agregar C:\Users\PROGRAMADOR\AppData\Local\Android\Sdk\platform-tools
 
 3 INSTALA GIT EN LA COMPU Y CLONAR ESTA MIERDA
 git clone https://github.com/CarlosStrife/StrifeComponents.git
+-CORRER npm install para que funcione o npm install -g react-native-cli 
 
 4 para instalar el navegador de pantallas empezamos aqui:
 https://reactnavigation.org/docs/getting-started
