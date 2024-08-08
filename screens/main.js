@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Image, TextInput, ImageBackground, View, StatusBar, TouchableHighlight, TouchableOpacity} from "react-native";
-import { inicioEstilos } from "../styles/main";
+import { mainStyles } from "../styles/main";
 import TextBox from '../components/textBox/textBox';
 
   
@@ -17,9 +17,10 @@ export default class Main extends React.Component{
         const state = this.state;
             if(state.pantalla == 'main')
             return(
-                <View>
-                    <Text style={inicioEstilos.etiqueta} maxFontSizeMultiplier={1}>Correoed:</Text>
-                    <TextBox></TextBox>
+                <View style={mainStyles.mainContainer}>
+                    <TextBox type='1' label={true}/>
+                    <TextBox type='2' label={true}/>
+                    <TextBox type='3' label={true}/>
                 </View>
             )
     }
