@@ -1,17 +1,17 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export const textBoxStyles = StyleSheet.create({
-    container:{
+    container1:{
         width: 250, 
         height: 70,
         margin: 5,
         padding: 5,
     },
-    label:{
+    label1:{
         color: 'black',
         fontSize: 18,
     },
-    textBox:{
+    textBox1:{
         backgroundColor: 'white',
         flex: 1,
         fontSize: 10,

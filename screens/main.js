@@ -1,7 +1,9 @@
 import React from 'react';
-import { Text, Image, TextInput, ImageBackground, View, StatusBar, TouchableHighlight, TouchableOpacity} from "react-native";
+import { Text, View,} from "react-native";
 import { mainStyles } from "../styles/main";
 import TextBox from '../components/textBox/textBox';
+import Button from '../components/button/button';
+import DatePicker from '../components/datePicker/datePicker';
 
   
 export default class Main extends React.Component{
@@ -9,18 +11,25 @@ export default class Main extends React.Component{
         super(props);
         this.state = {
             pantalla: 'main',
+            cajaTexto: '',
         };
     }
     
-    
+
+alerta(){
+    alert("ee");
+}
     render(){
         const state = this.state;
             if(state.pantalla == 'main')
             return(
                 <View style={mainStyles.mainContainer}>
-                    <TextBox type='1' label={true}/>
+                    <Text>{state.cajaTexto}</Text>
+                    <TextBox onChangeText={(cajaTexto) => this.setState({cajaTexto})} type='1' label={true} labelText='hola como estas' containerStyle={{backgroundColor: 'white'}} labelStyle={{backgroundColor: 'white'}} inputStyle={{backgroundColor: 'white'}} placeHolder='Hola'/>
                     <TextBox type='2' label={true}/>
                     <TextBox type='3' label={true}/>
+                    <Button onPress={() => this.alerta()} iconLeft={true} iconRight={true} text='enviar' rightColor='red' leftColor='yellow' leftSize={22}  rightSize={30} rightSymbol='grin-tongue' leftSymbol='hamsa' containerStyle={{backgroundColor: 'black'}} textStyle={{color: 'blue'}}/>
+                    <DatePicker onPress={() => this.alerta()}/>
                 </View>
             )
     }
