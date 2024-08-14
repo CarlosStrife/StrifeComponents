@@ -3,7 +3,7 @@ import { Text, View,} from "react-native";
 import { mainStyles } from "../styles/main";
 import TextBox from '../components/textBox/textBox';
 import Button from '../components/button/button';
-import DatePicker from '../components/datePicker/datePicker';
+import DateInput from '../components/dateInput/dateInput';
 
   
 export default class Main extends React.Component{
@@ -29,7 +29,7 @@ alerta(){
                     <TextBox type='2' label={true}/>
                     <TextBox type='3' label={true}/>
                     <Button onPress={() => this.alerta()} iconLeft={true} iconRight={true} text='enviar' rightColor='red' leftColor='yellow' leftSize={22}  rightSize={30} rightSymbol='grin-tongue' leftSymbol='hamsa' containerStyle={{backgroundColor: 'black'}} textStyle={{color: 'blue'}}/>
-                    <DatePicker onPress={() => this.alerta()}/>
+                    <DateInput onPress={() => this.alerta()}/>
                 </View>
             )
     }

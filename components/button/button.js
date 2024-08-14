@@ -12,12 +12,12 @@ export default class Button extends React.Component{
             iconRight: props.iconRight == undefined ? false : props.iconRight,
             containerStyle: props.containerStyle == undefined ? {} : props.containerStyle,
             textStyle: props.textStyle == undefined ? {} : props.textStyle,
-            leftColor: props.leftColor,
-            rightColor: props.rightColor,
-            leftSize: props.leftSize,
-            rightSize: props.rightSize,
-            leftSymbol: props.leftSymbol,
-            rightSymbol: props.rightSymbol,
+            leftColor: props.leftColor == undefined ? "black" : props.leftColor,
+            rightColor: props.rightColor == undefined ? "black" : props.rightColor,
+            leftSize: props.leftSize == undefined ? 48 : props.leftSize,
+            rightSize: props.rightSize == undefined ? 48 : props.rightSize,
+            leftSymbol: props.leftSymbol == undefined ? "hamburger" : props.leftSymbol,
+            rightSymbol: props.rightSymbol == undefined ? "guitar" : props.rightSymbol,
             text: props.text,
             onPress: props.onPress,
         };
@@ -28,9 +28,9 @@ export default class Button extends React.Component{
         const state = this.state;
         return(
             <TouchableOpacity onPress={state.onPress} style={[buttonStyles.container,state.containerStyle]}>
-                {state.iconLeft && <View style={buttonStyles.rightIconContainer}><Icon name={state.leftSymbol == undefined ? "hamburger" : state.leftSymbol} size={state.leftSize == undefined ? 48 : state.leftSize} color={state.leftColor == undefined ? "black" : state.leftColor} style={buttonStyles.leftIcon}/></View>}
+                {state.iconLeft && <View style={buttonStyles.rightIconContainer}><Icon name={state.leftSymbol} size={state.leftSize} color={state.leftColor} style={buttonStyles.leftIcon}/></View>}
                 {state.text == undefined ? '' :<Text style={[buttonStyles.text,state.textStyle]}>{state.text}</Text>}
-                {state.iconRight && <View style={buttonStyles.leftIconContainer}><Icon name={state.rightSymbol == undefined ? "guitar" : state.rightSymbol} size={state.rightSize == undefined ? 48 : state.rightSize} color={state.rightColor == undefined ? "black" : state.rightColor} style={buttonStyles.rightIcon}/></View>}
+                {state.iconRight && <View style={buttonStyles.leftIconContainer}><Icon name={state.rightSymbol} size={state.rightSize} color={state.rightColor} style={buttonStyles.rightIcon}/></View>}
             </TouchableOpacity>
         )
     }

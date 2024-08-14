@@ -12,8 +12,8 @@ export default class TextBox extends React.Component{
             containerStyle: props.containerStyle == undefined ? {} : props.containerStyle,
             labelStyle: props.labelStyle == undefined ? {} : props.labelStyle,
             inputStyle: props.inputStyle == undefined ? {} : props.inputStyle,
-            placeHolder: props.placeHolder,
-            labelText: props.labelText,
+            placeHolder: props.placeHolder == undefined ? 'placeholder' : props.placeHolder,
+            labelText: props.labelText == undefined ? 'Etiqueta 1:' : props.labelText,
             onChangeText: props.onChangeText,
         };
     }
@@ -24,22 +24,22 @@ export default class TextBox extends React.Component{
         if(state.type == '1')
             return(
                 <View style={[textBoxStyles.container1,state.containerStyle]}>
-                    { state.label && <Text style={[textBoxStyles.label1,state.labelStyle]} maxFontSizeMultiplier={1}>{state.labelText == undefined ? 'Etiqueta 1:' : state.labelText}</Text>}
-                    <TextInput onChangeText={state.onChangeText} style={[textBoxStyles.textBox1,state.inputStyle]} placeholder={state.placeHolder == undefined ? 'placeholder' : state.placeHolder} placeholderTextColor={'grey'}/>
+                    { state.label && <Text style={[textBoxStyles.label1,state.labelStyle]} maxFontSizeMultiplier={1}>{state.labelText}</Text>}
+                    <TextInput onChangeText={state.onChangeText} style={[textBoxStyles.textBox1,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'}/>
                 </View>
             )
         else if(state.type == '2')
             return(
                 <View style={[textBoxStyles.container2,state.containerStyle]}>
-                    { state.label && <Text style={[textBoxStyles.label2,state.labelStyle]} maxFontSizeMultiplier={1}>Etiqueta 2:</Text>}
-                    <TextInput onChangeText={state.onChangeText} style={[textBoxStyles.textBox2,state.inputStyle]} placeholder={'placeholder'} placeholderTextColor={'grey'}/>
+                    { state.label && <Text style={[textBoxStyles.label2,state.labelStyle]} maxFontSizeMultiplier={1}>{state.labelText}</Text>}
+                    <TextInput onChangeText={state.onChangeText} style={[textBoxStyles.textBox2,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'}/>
                 </View>
             )
         else if(state.type == '3')
             return(
                 <View style={[textBoxStyles.container3,state.containerStyle]}>
-                    { state.label && <Text style={[textBoxStyles.label3,state.labelStyle]} maxFontSizeMultiplier={1}>Etiqueta 3:</Text>}
-                    <TextInput onChangeText={state.onChangeText} style={[textBoxStyles.textBox3,state.inputStyle]} placeholder={'placeholder'} placeholderTextColor={'grey'}/>
+                    { state.label && <Text style={[textBoxStyles.label3,state.labelStyle]} maxFontSizeMultiplier={1}>{state.labelText}</Text>}
+                    <TextInput onChangeText={state.onChangeText} style={[textBoxStyles.textBox3,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'}/>
                 </View>
             )
     }
