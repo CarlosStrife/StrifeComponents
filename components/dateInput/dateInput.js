@@ -26,17 +26,16 @@ export default class DateInput extends React.Component{
             symbol: props.symbol == undefined ? 'calendar' : props.symbol,
 
             theme: props.theme == undefined ? 'light' : props.theme,
-            divider: props.divider == undefined ? 'red' : props.divider,
+            divider: props.divider == undefined ? 'black' : props.divider,
             mode: props.mode == undefined ? 'date' : props.mode,
 
-            okSymbol: props.okSymbol == undefined ? 'times-circle' : props.okSymbol,
-            closeSymbol: props.closeSymbol == undefined ? 'check-circle' : props.closeSymbol,
+            closeSymbol: props.okSymbol == undefined ? 'times-circle' : props.okSymbol,
+            okSymbol: props.closeSymbol == undefined ? 'check-circle' : props.closeSymbol,
             okColor: props.okColor == undefined ? "'rgb(255, 66, 124)'" : props.okColor,
             closeColor: props.closeColor == undefined ? "'rgb(0, 209, 63)'" : props.closeColor,
             okSize: props.okSize == undefined ? 48 : props.okSize,
             closeSize: props.closeSize == undefined ? 48 : props.closeSize,
 
-            onPress: props.onPress,
             date: new Date(),
             modalVisible: false,
         };
@@ -49,7 +48,8 @@ export default class DateInput extends React.Component{
         this.setState({
             dateText: this.state.date.getFullYear() + "-" + this.month(this.state.date.getMonth()) + "-" + this.day(this.state.date.getDate()),
             modalVisible: false,
-        });
+        });        
+        this.props.onChangeDate(this.state.date.getFullYear() + "-" + this.month(this.state.date.getMonth()) + "-" + this.day(this.state.date.getDate()))
     }
 
     month(number){
@@ -82,10 +82,10 @@ export default class DateInput extends React.Component{
                             </View>
                             <View style={dateInputStyles.buttonsContainer}>
                                 <TouchableOpacity style={[dateInputStyles.closeButton,state.closeButtonStyle]} onPress={() => { this.openModal(!state.modalVisible); }}>
-                                    <Icon name={state.okSymbol} color={state.okColor} size={state.okSize} style={dateInputStyles.modalIcon} />
+                                    <Icon name={state.closeSymbol} color={state.closeColor} size={state.closeSize} style={dateInputStyles.modalIcon} />
                                 </TouchableOpacity>
                                 <TouchableOpacity style={[dateInputStyles.okButton,state.okButtonStyle]} onPress={() => this.setDate()}>
-                                    <Icon name={state.closeSymbol} color={state.closeColor} size={state.closeSize} style={dateInputStyles.modalIcon} />
+                                    <Icon name={state.okSymbol} color={state.okColor} size={state.okSize} style={dateInputStyles.modalIcon} />
                                 </TouchableOpacity>
                             </View>
                         </View>
