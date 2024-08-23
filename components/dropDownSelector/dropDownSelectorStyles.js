@@ -1,72 +1,63 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export const dropDownSelectorStyles = StyleSheet.create({
-    container:{
+    scrollView:{        
         width: 250, 
-        height: 140,
+    },
+    container:{
         margin: 5,
         padding: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'red'
+        borderWidth: 1,
+        gap: 5,
+        backgroundColor: 'white',
     },
     textInput:{
-        flex: 1,
+        height: 60,
         width: '95%',
         borderWidth: 1,
+        borderRadius: 10,
         textAlign: 'center',
-        fontSize: 14,
         color: 'black',
+        backgroundColor: 'white',
     },
     button:{
-        flex:1,
-        width: '95%',
-        backgroundColor: 'rgb(20, 169, 255)',
-        borderRadius: 10,
-        alignItems: 'center'
-    },
-    icon:{
-        margin: 2
-    },
-    modalContainer:{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    modalBackground:{
-        backgroundColor: 'white',
-        alignItems: 'center',
-        height: 300,
-        borderWidth: 1,
-        borderRadius: 10
-    },
-    dateContainer:{
-        flex: 2,
-        margin: 5,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    buttonsContainer:{
-        flex: 1,
         flexDirection: 'row',
-        margin: 5,
+        width: '95%',
+        height: 60,
+        borderRadius: 5,
+        borderWidth: 1,
         alignItems: 'center',
+        gap: 2
+    },
+    buttonText:{
+        fontSize: 10,
+        flex: 6,
+        textAlign: 'center',
+    },
+    buttonIcon:{
+        flex: 1,
+        textAlign: 'center',
+    },
+    option:{
+        height: 50,
+        width: '95%',
+        borderRadius: 5,
+        borderWidth: 1,
+        alignItems: 'center',
+        backgroundColor: 'white',
+    },
+    optionText:{
+        fontSize: 10,
+    },
+    optionEmpty:{
+        height: 50,
+        width: '95%',
+        borderRadius: 5,
+        borderWidth: 1,
+        alignItems: 'center',
+        backgroundColor: 'lightgrey',
         justifyContent: 'center',
-        gap: 100,
-    },
-    closeButton:{
-        backgroundColor: 'white',
-        borderRadius: 10,
-        borderWidth: 4,
-        borderColor: 'rgb(255, 66, 66)',
-    },
-    okButton:{
-        backgroundColor: 'white',
-        borderRadius: 10,
-        borderWidth: 4,
-        borderColor: 'rgb(0, 209, 63)',
-    },
-    modalIcon:{
-        margin: 5
     },
 });
