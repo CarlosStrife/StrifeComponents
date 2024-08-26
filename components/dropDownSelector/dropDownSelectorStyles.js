@@ -13,15 +13,6 @@ export const dropDownSelectorStyles = StyleSheet.create({
         gap: 5,
         backgroundColor: 'white',
     },
-    textInput:{
-        height: 60,
-        width: '95%',
-        borderWidth: 1,
-        borderRadius: 10,
-        textAlign: 'center',
-        color: 'black',
-        backgroundColor: 'white',
-    },
     button:{
         flexDirection: 'row',
         width: '95%',
@@ -29,7 +20,7 @@ export const dropDownSelectorStyles = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1,
         alignItems: 'center',
-        gap: 2
+        gap: 2,
     },
     buttonText:{
         fontSize: 10,
@@ -40,6 +31,16 @@ export const dropDownSelectorStyles = StyleSheet.create({
         flex: 1,
         textAlign: 'center',
     },
+    textInput:{
+        height: 60,
+        width: '95%',
+        borderWidth: 1,
+        borderRadius: 10,
+        textAlign: 'center',
+        color: 'black',
+        backgroundColor: 'white',
+        display: 'none',
+    },
     option:{
         height: 50,
         width: '95%',
@@ -47,6 +48,8 @@ export const dropDownSelectorStyles = StyleSheet.create({
         borderWidth: 1,
         alignItems: 'center',
         backgroundColor: 'white',
+        justifyContent: 'center',
+        display: 'none',
     },
     optionText:{
         fontSize: 10,

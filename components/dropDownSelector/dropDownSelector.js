@@ -12,69 +12,82 @@ export default class DropDownSelector extends React.Component{
             containerStyle: props.containerStyle == undefined ? {} : props.containerStyle,
             textInputStyle: props.textInputStyle == undefined ? {} : props.textInputStyle,
             buttonStyle: props.buttonStyle == undefined ? {} : props.buttonStyle,
+            buttonTextStyle: props.buttonTextStyle == undefined ? {} : props.buttonTextStyle,
             optionStyle: props.optionStyle == undefined ? {} : props.optionStyle,
-            modalContainerStyle: props.modalContainerStyle == undefined ? {} : props.modalContainerStyle,
-            modalBackgroundStyle: props.modalBackgroundStyle == undefined ? {} : props.modalBackgroundStyle,
-            dateStyle: props.dateStyle == undefined ? {} : props.dateStyle,
-            closeButtonStyle: props.closeButtonStyle == undefined ? {} : props.closeButtonStyle,
-            okButtonStyle: props.okButtonStyle == undefined ? {} : props.okButtonStyle,
+            optionTextStyle: props.optionTextStyle == undefined ? {} : props.optionTextStyle,
 
-            text: '',
             placeHolderColor: props.placeHolderColor == undefined ? 'lightgrey' : props.placeHolderColor,
+            option: props.placeHolderOption == undefined ? 'Selecciona' : props.placeHolderOption,
+            
+            display: 'none',
+            text: '',
 
             iconColor: props.iconColor == undefined ? 'black' : props.iconColor,
             size: props.size == undefined ? 25 : props.size,
             symbol: props.symbol == undefined ? 'caret-down' : props.symbol,
 
-            theme: props.theme == undefined ? 'light' : props.theme,
-            divider: props.divider == undefined ? 'black' : props.divider,
-            mode: props.mode == undefined ? 'date' : props.mode,
             
-            datos: [],
-            datosAux: ['1','2','3','12','13','22','23','33'],
-            datosAux: [<View style={[dropDownSelectorStyles.optionEmpty]}><Text style={dropDownSelectorStyles.optionText}>NO HAY DATOS</Text></View>],
+            datas: props.datas == undefined ? [] : props.datas,
+            datasAux: [],
         };
     }
     
-    componentDidMount(){//me quede haciendo esto
-
+    componentDidMount(){
+        if(this.state.datas[0] != undefined){
+            var array = [];
+            this.state.datas.map((option,index) => {
+                array.push(option.toString());
+            })
+            this.setState({
+                datasAux: array,
+            });
+        }
     }
 
     searchCoincidences(text) {
-        if(this.state.datos[0] != 'no hay datos'){
-            var arregloAux = [];
-            this.state.datos.map((renglon,indice) => {
-                if(renglon[0].props.children.props.children.toLowerCase().includes(texto.toLowerCase()))
-                    arregloAux.push([<TouchableOpacity style={[dropDownSelectorStyles.option,state.optionStyle]}><Text style={dropDownSelectorStyles.optionText}>HOLA ESTA ES UNA OPCION</Text></TouchableOpacity>]);
+        if(this.state.datas[0] != undefined){
+            var array = [];
+            this.state.datas.map((option,index) => {
+                if(option.toString().toLowerCase().includes(text.toLowerCase()))
+                    array.push(option.toString());
             })
             this.setState({
                 text: text.toLowerCase(),
-                datosAux: arregloAux,
-            });
-        }
-        else{
-            var arregloAux = [];
-            arregloAux.push([<Row key={0} data={["no hay datos"]} widthArr={this.state.dimensionesTabla} style={[clientesEstilos.renglon, 0%2 && clientesEstilos.renglon2]} textStyle={clientesEstilos.textoContenidoTabla} maxFontSizeMultiplier={1}/>]);
-            this.setState({
-                text: text.toLowerCase(),
-                datosAux: arregloAux,
+                datasAux: array,
             });
         }
     }
 
+    showOptions(){
+        if(this.state.display == 'none')
+            this.setState({display: 'flex'});
+        else
+            this.setState({display: 'none'});
+    }
+    selectOption(option){
+        this.setState({
+            display: 'none',
+            option: option,
+        });
+        this.props.onChangeOption(option);
+    }
     render(){
         const state = this.state;
         return(
             <ScrollView contentContainerStyle={[dropDownSelectorStyles.container,state.containerStyle]} style={[dropDownSelectorStyles.scrollView,state.scrollViewStyle]}>
-                <TouchableOpacity style={[dropDownSelectorStyles.button,state.buttonStyle]}>
-                    <Text style={dropDownSelectorStyles.buttonText}>Selecciona Algo ...</Text>
+                
+                <TouchableOpacity style={[dropDownSelectorStyles.button,state.buttonStyle]} onPress={() => this.showOptions()}>
+                    <Text style={[dropDownSelectorStyles.buttonText,state.buttonTextStyle]}>{state.option}</Text>
                     <Icon style={dropDownSelectorStyles.buttonIcon} name={state.symbol} size={state.size} color={state.iconColor}/>
                 </TouchableOpacity>
-                <TextInput style={[dropDownSelectorStyles.textInput,state.textInputStyle]} placeholder='Buscar...' placeholderTextColor={state.placeHolderColor} value={state.text} onChangeText={(text) => { this.setState({text}); }} />
+                <TextInput style={[dropDownSelectorStyles.textInput,state.textInputStyle, {display: state.display}]} placeholder='Buscar...' placeholderTextColor={state.placeHolderColor} value={state.text} onChangeText={(text) => this.searchCoincidences(text)} />
                 {
-                state.datosAux.map((renglon, indice) => (
-                    renglon
-                ))
+                    this.state.datasAux[0] != undefined ?
+                    state.datasAux.map((option, index) => (
+                        <TouchableOpacity key={index} style={[dropDownSelectorStyles.option,this.state.optionStyle, {display: this.state.display}]} onPress={() => this.selectOption(option)}><Text style={[dropDownSelectorStyles.optionText, state.optionTextStyle]}>{option}</Text></TouchableOpacity>
+                    )) 
+                    :
+                    <View style={[dropDownSelectorStyles.optionEmpty, {display: this.state.display}]}><Text style={dropDownSelectorStyles.optionText}>NO HAY DATOS</Text></View>
                 }
             </ScrollView>
         )
