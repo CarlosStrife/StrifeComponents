@@ -1,66 +1,51 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-export const dropDownSelectorStyles = StyleSheet.create({
-    scrollView:{        
-        width: 250, 
+export const tableStyles = StyleSheet.create({
+    scrollView:{       
     },
-    container:{
-        margin: 5,
-        padding: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderWidth: 1,
-        gap: 5,
-        backgroundColor: 'white',
-    },
-    button:{
-        flexDirection: 'row',
-        width: '95%',
-        height: 60,
-        borderRadius: 5,
-        borderWidth: 1,
-        alignItems: 'center',
-        gap: 2,
-    },
-    buttonText:{
-        fontSize: 10,
-        flex: 6,
-        textAlign: 'center',
-    },
-    buttonIcon:{
-        flex: 1,
-        textAlign: 'center',
+    container: {  
+        height: 250,
+        width: 250,
+        borderColor: 'blue',
+        borderWidth: 0,
+        borderRadius: 10, 
+        backgroundColor: 'white'
     },
     textInput:{
         height: 60,
-        width: '95%',
+        width: 250,
         borderWidth: 1,
         borderRadius: 10,
         textAlign: 'center',
         color: 'black',
         backgroundColor: 'white',
-        display: 'none',
     },
-    option:{
-        height: 50,
-        width: '95%',
-        borderRadius: 5,
-        borderWidth: 1,
-        alignItems: 'center',
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        display: 'none',
+    table:{
+        backgroundColor: 'black',
     },
-    optionText:{
-        fontSize: 10,
+    rowHeader: {
+        flexDirection: 'row',
+        backgroundColor: '#BCFF45',
+        gap: 5,
+        marginBottom: 2
     },
-    optionEmpty:{
-        height: 50,
-        width: '95%',
-        borderRadius: 5,
-        borderWidth: 1,
-        alignItems: 'center',
+    cellHeader: {
+        width: 60,
+    },
+    headerText:{
+        fontSize: 20
+    },
+    row: {
+        flexDirection: 'row',
+        backgroundColor: '#079BFF',
+        gap: 5,
+    },
+    row2: {
+        flexDirection: 'row',
         backgroundColor: 'lightgrey',
-        justifyContent: 'center',
+        gap: 5,
+    },
+    cell: {
+        width: 60,
     },
 });
