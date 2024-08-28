@@ -26,6 +26,7 @@ export const dropDownSelectorStyles = StyleSheet.create({
         fontSize: 10,
         flex: 6,
         textAlign: 'center',
+        color: 'black'
     },
     buttonIcon:{
         flex: 1,
@@ -53,6 +54,7 @@ export const dropDownSelectorStyles = StyleSheet.create({
     },
     optionText:{
         fontSize: 10,
+        color: 'black'
     },
     optionEmpty:{
         height: 50,

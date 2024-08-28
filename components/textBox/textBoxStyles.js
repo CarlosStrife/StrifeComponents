@@ -17,7 +17,8 @@ export const textBoxStyles = StyleSheet.create({
         fontSize: 10,
         paddingTop: 1,
         paddingBottom: 1,
-        borderWidth: 1
+        borderWidth: 1,
+        color: 'black'
     },
     container2:{
         width: 250, 
@@ -44,7 +45,8 @@ export const textBoxStyles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
         borderWidth: 1,
-        borderRadius: 6
+        borderRadius: 6,
+        color: 'black'
     },
     container3:{
         width: 250, 
@@ -66,5 +68,6 @@ export const textBoxStyles = StyleSheet.create({
         paddingRight: 10,
         borderBottomWidth: 2,
         backgroundColor: 'lightgrey',
+        color: 'black'
     }
 });

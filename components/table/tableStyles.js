@@ -1,15 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export const tableStyles = StyleSheet.create({
-    scrollView:{       
-    },
     container: {  
         height: 250,
         width: 250,
         borderColor: 'blue',
-        borderWidth: 0,
-        borderRadius: 10, 
-        backgroundColor: 'white'
+        borderWidth: 1, 
+        backgroundColor: 'white',
+        gap: 5
     },
     textInput:{
         height: 60,
@@ -32,12 +30,12 @@ export const tableStyles = StyleSheet.create({
     cellHeader: {
         width: 60,
     },
-    headerText:{
-        fontSize: 20
+    emptyText:{
+        fontSize: 20,
+        color: 'lightgrey'
     },
     row: {
         flexDirection: 'row',
-        backgroundColor: '#079BFF',
         gap: 5,
     },
     row2: {

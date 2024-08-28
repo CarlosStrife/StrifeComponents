@@ -6,6 +6,8 @@ import Button from '../components/button/button';
 import DateInput from '../components/dateInput/dateInput';
 import DropDownSelector from '../components/dropDownSelector/dropDownSelector';
 import Table from '../components/table/table';
+import Switch from '../components/switch/switch';
+import Radio from '../components/radio/radio';
 
   
 export default class Main extends React.Component{
@@ -15,7 +17,8 @@ export default class Main extends React.Component{
             pantalla: 'main',
             cajaTexto: '',
             date: '',
-            option: 'nada'
+            option: 'nada',
+            value: true,
         };
     }
     
@@ -31,19 +34,28 @@ export default class Main extends React.Component{
         alert("ee");
     }
 
+    onOff(option){
+        this.setState({value: option});
+    }
+
     render(){
         const state = this.state;
             if(state.pantalla == 'main')
             return(
                 <ScrollView style={mainStyles.mainContainer}>
-                    {/*<Text>{state.cajaTexto}</Text>
+                    <Text style={{color: 'black'}}>{state.value.toString()}</Text>
                     <TextBox onChangeText={(cajaTexto) => this.setState({cajaTexto})} type='1' label={true} labelText='etiq' containerStyle={{backgroundColor: 'white'}} labelStyle={{backgroundColor: 'white'}} inputStyle={{backgroundColor: 'white'}} placeHolder='Hola'/>
                     <TextBox type='2' label={true}/>
                     <TextBox type='3' label={true}/>
                     <Button onPress={() => this.alerta()} iconLeft={true} iconRight={true} text='enviar' rightColor='red' leftColor='yellow' leftSize={22}  rightSize={30} rightSymbol='grin-tongue' leftSymbol='hamsa' containerStyle={{backgroundColor: 'black'}} textStyle={{color: 'blue'}}/>
                     <DateInput closeColor='purple' okColor='purple' onChangeDate={this.onChangeDate.bind(this)} />
-                    <DropDownSelector onChangeOption={this.onChangeOption.bind(this)} datas={[1,2,5,8]}/>*/}
-                    <Table datasHeader={[<Text>HOLA</Text>,<Text>ESTA</Text>,<Text>ES</Text>,<Text>UNA</Text>,<Text>PRUEBA</Text>,<Button onPress={() => this.alerta()} iconLeft={true} iconRight={true} text='enviar' rightColor='red' leftColor='yellow' leftSize={22}  rightSize={30} rightSymbol='grin-tongue' leftSymbol='hamsa' containerStyle={{backgroundColor: 'black'}} textStyle={{color: 'blue'}}/>]}/>
+                    <DropDownSelector onChangeOption={this.onChangeOption.bind(this)} datas={[1,2,5,8]}/>
+                    <Table datasHeader={[<Text style={{color:'black'}}>HOLA</Text>,<Text style={{color:'black'}}>ESTA</Text>,<Text style={{color:'black'}}>ES</Text>,<Text style={{color:'black'}}>UNA</Text>,<Text style={{color:'black'}}>PRUEBA</Text>]}
+                           datas={[[<Text style={{color:'black'}}>1</Text>,<Text style={{color:'black'}}>2</Text>,<Text style={{color:'black'}}>3</Text>,<Text style={{color:'black'}}>4</Text>,<Text style={{color:'black'}}>5</Text>]
+                           ,[<Text style={{color:'black'}}>6</Text>,<Text style={{color:'black'}}>7</Text>,<Text style={{color:'black'}}>8</Text>,<Text style={{color:'black'}}>9</Text>,<Text style={{color:'black'}}>10</Text>]]}
+                    />
+                    <Switch onOff={this.onOff.bind(this)} />
+                    <Radio />
                 </ScrollView>
             )
     }
