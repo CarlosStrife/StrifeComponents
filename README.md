@@ -9,6 +9,11 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 
 npm i react-native-date-picker
-este es solo un calendario
-se supone y funciona en los dos ios y android
+//este es solo un calendario
+//se supone y funciona en los dos ios y android
 import DatePicker from 'react-native-date-picker'
+
+
+npm install react-native-linear-gradient 
+//esto se usa para estilizarlo nada mas
+import LinearGradient from 'react-native-linear-gradient';

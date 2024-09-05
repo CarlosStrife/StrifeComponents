@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 // react-native-date-picker
 import com.henninghall.date_picker.DatePickerPackage;
+// react-native-linear-gradient
+import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-vector-icons
 import com.oblador.vectoricons.VectorIconsPackage;
 
@@ -61,6 +63,7 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new DatePickerPackage(),
+      new LinearGradientPackage(),
       new VectorIconsPackage()
     ));
   }
