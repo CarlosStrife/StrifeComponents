@@ -38,6 +38,10 @@ export default class Main extends React.Component{
         this.setState({value: option});
     }
 
+    pressed(option){
+        this.setState({value: option});
+    }
+
     render(){
         const state = this.state;
             if(state.pantalla == 'main')
@@ -55,7 +59,7 @@ export default class Main extends React.Component{
                            ,[<Text style={{color:'black'}}>6</Text>,<Text style={{color:'black'}}>7</Text>,<Text style={{color:'black'}}>8</Text>,<Text style={{color:'black'}}>9</Text>,<Text style={{color:'black'}}>10</Text>]]}
                     />
                     <Switch onOff={this.onOff.bind(this)} />
-                    <Radio />
+                    <Radio  pressed={this.pressed.bind(this)} radios={['1','carlos','hey']}/>
                 </ScrollView>
             )
     }
