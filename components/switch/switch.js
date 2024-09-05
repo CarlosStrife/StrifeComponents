@@ -12,7 +12,7 @@ export default class Switch extends React.Component{
             left: props.width == undefined ? 130/2 : props.width/2,
             value: true,
             backgroundColor: 'rgb(20, 169, 255)',
-            color: 'white',
+            color: props.color == undefined ? 'white' : props.color,
             height: props.height == undefined ? 70 : props.height,
             width: props.width == undefined ? 130 : props.width,
             ballHeight: props.height == undefined ? 70-10 : props.height-10,

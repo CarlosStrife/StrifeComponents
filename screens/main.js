@@ -8,6 +8,7 @@ import DropDownSelector from '../components/dropDownSelector/dropDownSelector';
 import Table from '../components/table/table';
 import Switch from '../components/switch/switch';
 import Radio from '../components/radio/radio';
+import ProgressBar from '../components/progressBar/progressBar';
 
   
 export default class Main extends React.Component{
@@ -60,6 +61,7 @@ export default class Main extends React.Component{
                     />
                     <Switch onOff={this.onOff.bind(this)} />
                     <Radio  pressed={this.pressed.bind(this)} radios={['1','carlos','hey']}/>
+                    <ProgressBar />
                 </ScrollView>
             )
     }

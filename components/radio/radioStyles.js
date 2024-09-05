@@ -2,6 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export const radioStyles = StyleSheet.create({
     container:{
+        margin: 5,
         height: 250,
         width: 320,
         borderWidth: 1,

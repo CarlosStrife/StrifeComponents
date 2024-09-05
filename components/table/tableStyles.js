@@ -1,7 +1,8 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export const tableStyles = StyleSheet.create({
-    container: {  
+    container: {
+        margin: 5,
         height: 250,
         width: 250,
         borderColor: 'blue',
