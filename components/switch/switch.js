@@ -11,7 +11,7 @@ export default class Switch extends React.Component{
 
             left: props.width == undefined ? 130/2 : props.width/2,
             value: true,
-            backgroundColor: 'rgb(20, 169, 255)',
+            backgroundColor: props.backgroundColor == undefined ? 'rgb(20, 169, 255)' : props.backgroundColor,
             color: props.color == undefined ? 'white' : props.color,
             height: props.height == undefined ? 70 : props.height,
             width: props.width == undefined ? 130 : props.width,
@@ -34,7 +34,7 @@ export default class Switch extends React.Component{
             this.setState({
                 left: this.state.width == undefined ? 130/2 : this.state.width/2,
                 value: true,
-                backgroundColor: 'rgb(20, 169, 255)',
+                backgroundColor: this.props.backgroundColor == undefined ? 'rgb(20, 169, 255)' : this.props.backgroundColor,
             });
             this.props.onOff(true);
         }
