@@ -54,8 +54,8 @@ export default class Main extends React.Component{
             if(state.pantalla == 'main')
                 return(
                     <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <Text style={{color: "white", fontSize: 30, fontWeight: 'bold', marginTop: 20}}>STRIFE COMPONENTS</Text>
-                        <LinearGradient colors={['#086375','#1dd3b0', '#AFFC41', '#B2FF9E']} style={{borderWidth: 1,borderBottomWidth: 10,borderLeftWidth: 10,marginTop:20,width: 300,alignItems: 'center',justifyContent:'center'}}>
+                        <Text style={mainStyles.title}>STRIFE COMPONENTS</Text>
+                        <LinearGradient colors={['#086375','#1dd3b0', '#AFFC41', '#B2FF9E']} style={mainStyles.container1}>
                             <Button onPress={() => this.cambiarPantalla("textBox")} text='CAJA DE TEXTO'  containerStyle={{backgroundColor: 'green'}} textStyle={{color: 'white'}}/>
                             <Button onPress={() => this.cambiarPantalla("button")} text='BOTON'  containerStyle={{backgroundColor: 'yellow'}} textStyle={{color: 'black'}}/>
                             <Button onPress={() => this.cambiarPantalla("dateInput")} text='SELECTOR DE FECHA'  containerStyle={{backgroundColor: 'blue'}} textStyle={{color: 'white'}}/>
@@ -70,85 +70,95 @@ export default class Main extends React.Component{
                 )
             else if(state.pantalla == 'textBox')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                        </View>
-                        <Text style={{color: 'black'}}>{state.value.toString()}</Text>
-                        <TextBox onChangeText={(cajaTexto) => this.setState({cajaTexto})} type='1' label={true} labelText='etiq' containerStyle={{backgroundColor: 'white'}} labelStyle={{backgroundColor: 'white'}} inputStyle={{backgroundColor: 'white'}} placeHolder='Hola'/>
-                        <TextBox type='2' label={true}/>
-                        <TextBox type='3' label={true}/>
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#272727'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#009FB7','#FED766']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <TextBox onChangeText={(cajaTexto) => this.setState({cajaTexto})} type='1' label={true} labelText='etiq' containerStyle={{backgroundColor: 'white'}} labelStyle={{backgroundColor: 'white'}} inputStyle={{backgroundColor: 'white'}} placeHolder='Hola'/>
+                            <TextBox type='2' label={true}/>
+                            <TextBox type='3' label={true}/>
+                        </LinearGradient>
                     </ScrollView>
                 )
             else if(state.pantalla == 'button')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <Text style={{color: 'black'}}>{state.value.toString()}</Text>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                            <Button onPress={() => this.alerta()} iconLeft={true} iconRight={true} text='PRUEBA' rightColor='red' leftColor='yellow' leftSize={22}  rightSize={30} rightSymbol='grin-tongue' leftSymbol='hamsa' containerStyle={{backgroundColor: 'black'}} textStyle={{color: 'blue'}}/>
-                        </View>
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#2274A5'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#E7EB90','#FADF63', '#E6AF2E']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                                <Button onPress={() => this.alerta()} iconLeft={true} iconRight={true} text='PRUEBA' rightColor='red' leftColor='yellow' leftSize={22}  rightSize={30} rightSymbol='grin-tongue' leftSymbol='hamsa' containerStyle={{backgroundColor: 'black'}} textStyle={{color: 'blue'}}/>
+                            </View>
+                        </LinearGradient>
                     </ScrollView>
                 )
             else if(state.pantalla == 'dateInput')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                        </View>
-                        <Text style={{color: 'black'}}>{state.value.toString()}</Text>
-                        <DateInput closeColor='purple' okColor='purple' onChangeDate={this.onChangeDate.bind(this)} />
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#880D1E'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#DD2D4A','#F26A8D', '#F49CBB']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <DateInput closeColor='purple' okColor='purple' onChangeDate={this.onChangeDate.bind(this)} />
+                        </LinearGradient>
                     </ScrollView>
                 )
             else if(state.pantalla == 'dropDownSelector')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                        </View>
-                        <Text style={{color: 'black'}}>{state.value.toString()}</Text>
-                        <DropDownSelector onChangeOption={this.onChangeOption.bind(this)} datas={[1,2,5,8]}/>
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#170312'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#33032F','#531253', '#A0ACAD']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <DropDownSelector onChangeOption={this.onChangeOption.bind(this)} datas={[1,2,5,8]}/>
+                        </LinearGradient>
                     </ScrollView>
                 )
             else if(state.pantalla == 'table')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                        </View>
-                        <Table datasHeader={[<Text style={{color:'black'}}>HOLA</Text>,<Text style={{color:'black'}}>ESTA</Text>,<Text style={{color:'black'}}>ES</Text>,<Text style={{color:'black'}}>UNA</Text>,<Text style={{color:'black'}}>PRUEBA</Text>]}
-                            datas={[[<Text style={{color:'black'}}>1</Text>,<Text style={{color:'black'}}>2</Text>,<Text style={{color:'black'}}>3</Text>,<Text style={{color:'black'}}>4</Text>,<Text style={{color:'black'}}>5</Text>]
-                            ,[<Text style={{color:'black'}}>6</Text>,<Text style={{color:'black'}}>7</Text>,<Text style={{color:'black'}}>8</Text>,<Text style={{color:'black'}}>9</Text>,<Text style={{color:'black'}}>10</Text>]]}
-                        />
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#000000'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#2F4550','#586F7C', '#B8DBD9', '#F4F4F9']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <Table datasHeader={[<Text style={{color:'black'}}>HOLA</Text>,<Text style={{color:'black'}}>ESTA</Text>,<Text style={{color:'black'}}>ES</Text>,<Text style={{color:'black'}}>UNA</Text>,<Text style={{color:'black'}}>PRUEBA</Text>]}
+                                datas={[[<Text style={{color:'black'}}>1</Text>,<Text style={{color:'black'}}>2</Text>,<Text style={{color:'black'}}>3</Text>,<Text style={{color:'black'}}>4</Text>,<Text style={{color:'black'}}>5</Text>]
+                                ,[<Text style={{color:'black'}}>6</Text>,<Text style={{color:'black'}}>7</Text>,<Text style={{color:'black'}}>8</Text>,<Text style={{color:'black'}}>9</Text>,<Text style={{color:'black'}}>10</Text>]]}
+                            />
+                        </LinearGradient>
                     </ScrollView>
                 )
             else if(state.pantalla == 'switch')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                        </View>
-                        <Text style={{color: 'black'}}>{state.value.toString()}</Text>
-                        <Switch onOff={this.onOff.bind(this)} />
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#C2F970'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#44344F','#564D80', '#98A6D4']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <Switch onOff={this.onOff.bind(this)} />
+                        </LinearGradient>
                     </ScrollView>
                 )
             else if(state.pantalla == 'radio')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                        </View>
-                        <Text style={{color: 'black'}}>{state.value.toString()}</Text>
-                        <Radio  pressed={this.pressed.bind(this)} radios={['1','carlos','hey']}/>
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#73FBD3'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#44E5E7','#59D2FE', '#4A8FE7', '#5C7AFF']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <Radio  pressed={this.pressed.bind(this)} radios={['1','carlos','hey']}/>
+                        </LinearGradient>
                     </ScrollView>
                 )
             else if(state.pantalla == 'progressBar')
                 return(
-                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#3C1642'}]} contentContainerStyle={{alignItems: 'center'}}>
-                        <View>
-                            <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                        </View>
-                        <ProgressBar />
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#FFFFC7'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#548687','#473335']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <ProgressBar />
+                        </LinearGradient>
                     </ScrollView>
                 )
     }
