@@ -10,6 +10,7 @@ import Switch from '../components/switch/switch';
 import Radio from '../components/radio/radio';
 import ProgressBar from '../components/progressBar/progressBar';
 import LinearGradient from 'react-native-linear-gradient';
+import Login from '../components/login/login';
 
   
 export default class Main extends React.Component{
@@ -65,6 +66,7 @@ export default class Main extends React.Component{
                             <Button onPress={() => this.cambiarPantalla("switch")} text='SWITCH'  containerStyle={{backgroundColor: 'cyan'}} textStyle={{color: 'black'}}/>
                             <Button onPress={() => this.cambiarPantalla("radio")} text='RADIOS'  containerStyle={{backgroundColor: 'purple'}} textStyle={{color: 'white'}}/>
                             <Button onPress={() => this.cambiarPantalla("progressBar")} text='BARRA PROGRESIVA'  containerStyle={{backgroundColor: 'brown'}} textStyle={{color: 'white'}}/>
+                            <Button onPress={() => this.cambiarPantalla("login")} text='LOGIN'  containerStyle={{backgroundColor: 'pink'}} textStyle={{color: 'black'}}/>
                         </LinearGradient>
                         
                     </ScrollView>
@@ -159,6 +161,17 @@ export default class Main extends React.Component{
                                 <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
                             </View>
                             <ProgressBar />
+                        </LinearGradient>
+                    </ScrollView>
+                )
+            else if(state.pantalla == 'login')
+                return(
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#f294ff'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#548687','#8d96e4']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <Login />
                         </LinearGradient>
                     </ScrollView>
                 )
