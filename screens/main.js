@@ -171,7 +171,7 @@ export default class Main extends React.Component{
                             <View>
                                 <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
                             </View>
-                            <Login />
+                            <Login logoBool={true}/>
                         </LinearGradient>
                     </ScrollView>
                 )

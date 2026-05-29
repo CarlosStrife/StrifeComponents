@@ -24,7 +24,8 @@ export const textBoxStyles = StyleSheet.create({
         width: 250, 
         height: 70,
         margin: 5,
-        padding: 10,
+        paddingTop: 10,
+        paddingBottom: 10,
         borderWidth: 1,
         borderRadius: 7,
         borderColor: 'transparent',
@@ -40,6 +41,7 @@ export const textBoxStyles = StyleSheet.create({
     textBox2:{
         backgroundColor: 'white',
         flex: 1,
+        width: "100%",
         fontSize: 10,
         padding: 5,
         paddingLeft: 10,
