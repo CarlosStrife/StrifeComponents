@@ -17,7 +17,6 @@ export default class TextBox extends React.Component{
             onChangeText: props.onChangeText,
             autoCapitalize: props.autoCapitalize == undefined ? {} : props.autoCapitalize,
             secureTextEntry: props.secureTextEntry == undefined ? false : props.secureTextEntry,
-            value: props.value/*esto falla*/
         };
     }
     
@@ -28,21 +27,21 @@ export default class TextBox extends React.Component{
             return(
                 <View style={[textBoxStyles.container1,state.containerStyle]}>
                     { state.label && <Text style={[textBoxStyles.label1,state.labelStyle]} maxFontSizeMultiplier={1}>{state.labelText}</Text>}
-                    <TextInput value={state.value} onChangeText={state.onChangeText} style={[textBoxStyles.textBox1,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'} autoCapitalize={state.autoCapitalize} secureTextEntry={state.secureTextEntry} maxFontSizeMultiplier={1}/>
+                    <TextInput value={this.props.value} onChangeText={state.onChangeText} style={[textBoxStyles.textBox1,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'} autoCapitalize={state.autoCapitalize} secureTextEntry={state.secureTextEntry} maxFontSizeMultiplier={1}/>
                 </View>
             )
         else if(state.type == '2')
             return(
                 <View style={[textBoxStyles.container2,state.containerStyle]}>
                     { state.label && <Text style={[textBoxStyles.label2,state.labelStyle]} maxFontSizeMultiplier={1}>{state.labelText}</Text>}
-                    <TextInput value={state.value} onChangeText={state.onChangeText} style={[textBoxStyles.textBox2,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'} autoCapitalize={state.autoCapitalize} secureTextEntry={state.secureTextEntry} maxFontSizeMultiplier={1}/>
+                    <TextInput value={this.props.value} onChangeText={state.onChangeText} style={[textBoxStyles.textBox2,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'} autoCapitalize={state.autoCapitalize} secureTextEntry={state.secureTextEntry} maxFontSizeMultiplier={1}/>
                 </View>
             )
         else if(state.type == '3')
             return(
                 <View style={[textBoxStyles.container3,state.containerStyle]}>
                     { state.label && <Text style={[textBoxStyles.label3,state.labelStyle]} maxFontSizeMultiplier={1}>{state.labelText}</Text>}
-                    <TextInput value={state.value} onChangeText={state.onChangeText} style={[textBoxStyles.textBox3,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'} autoCapitalize={state.autoCapitalize} secureTextEntry={state.secureTextEntry} maxFontSizeMultiplier={1}/>
+                    <TextInput value={this.props.value} onChangeText={state.onChangeText} style={[textBoxStyles.textBox3,state.inputStyle]} placeholder={state.placeHolder} placeholderTextColor={'grey'} autoCapitalize={state.autoCapitalize} secureTextEntry={state.secureTextEntry} maxFontSizeMultiplier={1}/>
                 </View>
             )
     }

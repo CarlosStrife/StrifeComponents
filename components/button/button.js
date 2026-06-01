@@ -29,7 +29,7 @@ export default class Button extends React.Component{
         return(
             <TouchableOpacity onPress={state.onPress} style={[buttonStyles.container,state.containerStyle]}>
                 {state.iconLeft && <View style={buttonStyles.rightIconContainer}><Icon name={state.leftSymbol} size={state.leftSize} color={state.leftColor} style={buttonStyles.leftIcon}/></View>}
-                {state.text == undefined ? '' :<Text style={[buttonStyles.text,state.textStyle]}>{state.text}</Text>}
+                {state.text == undefined ? '' :<Text style={[buttonStyles.text,state.textStyle]} maxFontSizeMultiplier={1}>{state.text}</Text>}
                 {state.iconRight && <View style={buttonStyles.leftIconContainer}><Icon name={state.rightSymbol} size={state.rightSize} color={state.rightColor} style={buttonStyles.rightIcon}/></View>}
             </TouchableOpacity>
         )
