@@ -15,7 +15,7 @@ export default class TextBox extends React.Component{
             placeHolder: props.placeHolder == undefined ? 'placeholder' : props.placeHolder,
             labelText: props.labelText == undefined ? 'Etiqueta 1:' : props.labelText,
             onChangeText: props.onChangeText,
-            autoCapitalize: props.autoCapitalize == undefined ? {} : props.autoCapitalize,
+            autoCapitalize: props.autoCapitalize == undefined ? 'sentences' : props.autoCapitalize,
             secureTextEntry: props.secureTextEntry == undefined ? false : props.secureTextEntry,
         };
     }

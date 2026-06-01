@@ -14,18 +14,11 @@ export default class Login extends React.Component{
             user: "",
             password: "",
             outcome: "",
-
-            newPassword: "",
             confirmPassword: "",
 
-            screen: 'crear',
-            nombre: "",
-            apellidos: "",
-            usuario: "",
-            contrasena: "",
-            idUsuario: "",
-            nombreUsuario: "",
-            correoUsuario: "",
+            screen: 'inicio',
+            name: "",
+            lastName: "",
         };
     }
     
@@ -36,7 +29,7 @@ export default class Login extends React.Component{
         sucursal = "0",
         idSucursal = "0",
         outcome = "nulo";  
-        fetch('http://38.242.246.219/credifacilfinanciera.com/credifacil/credifacil2/movil/inicio.php', {
+        /*fetch('http://38.242.246.219/credifacilfinanciera.com/credifacil/credifacil2/movil/inicio.php', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -74,7 +67,11 @@ export default class Login extends React.Component{
             })
             .catch((error) => {
                 console.error(error);
-            });                         
+            });    */         
+            
+            this.setState({
+                screen: 'pantallas',  
+            });          
     }
 
     resetPassword(){
@@ -87,7 +84,7 @@ export default class Login extends React.Component{
         else if(this.state.nueva != this.state.confirma)
             alert("Las contraseñas no coinciden");
         else            
-            fetch('http://38.242.246.219/credifacilfinanciera.com/credifacil/credifacil2/movil/inicio.php', {
+            /*fetch('http://38.242.246.219/credifacilfinanciera.com/credifacil/credifacil2/movil/inicio.php', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -112,7 +109,11 @@ export default class Login extends React.Component{
                 })
                 .catch((error) => {
                     console.error(error);
-                });                         
+                });*/
+                
+            this.setState({
+                screen: 'inicio',  
+            });                           
     }
 
     newUser(){
@@ -132,7 +133,7 @@ export default class Login extends React.Component{
             alert("Por favor confirma la contraseña");
         else if(this.state.nueva != this.state.confirma)
             alert("Las contraseñas no coinciden");
-        else            
+        else/*            
             fetch('http://38.242.246.219/credifacilfinanciera.com/credifacil/credifacil2/movil/inicio.php', {
                 method: 'POST',
                 headers: {
@@ -160,7 +161,10 @@ export default class Login extends React.Component{
                 })
                 .catch((error) => {
                     console.error(error);
-                });                         
+                });   */ 
+            this.setState({
+                screen: 'inicio',  
+            });                      
     }
 
     closeSession = () =>{
@@ -183,42 +187,38 @@ export default class Login extends React.Component{
                 <ImageBackground style={loginStyles.mainContainer} source={require('../../assets/fondo.jpg')} >
                     <StatusBar backgroundColor={state.statusBarColor}/>
                     {state.logoBool && <Image style={loginStyles.logo} source={require('../../assets/cs.jpg')} />}
-                    <TextBox type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.user} onChangeText={(user) => this.setState({user})} autoCapitalize={"none"}/>
-                    <TextBox type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} autoCapitalize={"none"} secureTextEntry={true}/>
+                    <TextBox key='email' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.user} onChangeText={(user) => this.setState({user})} autoCapitalize={"none"}/>
+                    <TextBox key='password' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} autoCapitalize={"none"} secureTextEntry={true}/>
                     <TouchableOpacity><Text style={loginStyles.link} onPress={() => {this.setState({screen: 'restablecer'})}} maxFontSizeMultiplier={1}>Olvide mi contraseña</Text></TouchableOpacity>
+                    <TouchableOpacity><Text style={loginStyles.link} onPress={() => {this.setState({screen: 'crear'})}} maxFontSizeMultiplier={1}>Crear</Text></TouchableOpacity>
                     <Text style={loginStyles.labelWrong} maxFontSizeMultiplier={1}>{state.outcome}</Text>
-                    <Button iconLeft={false} iconRight={false} text={"Iniciar Sesion"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.login()}/>
+                    <Button key='loginButton' iconLeft={false} iconRight={false} text={"Iniciar Sesion"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.login()}/>
                 </ImageBackground>
             )
         if(state.screen == 'restablecer')
             return(
                 <ImageBackground style={loginStyles.mainContainer} source={require('../../assets/fondo.jpg')} >
                     <StatusBar backgroundColor={state.statusBarColor}/>
-                    <TouchableOpacity><Text style={loginStyles.hipervinculo2} onPress={() => {this.setState({pantalla: 'inicio'})}}>Volver</Text></TouchableOpacity>
-                    <TextBox type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.user} onChangeText={(user) => this.setState({user})} autoCapitalize={"none"}/>
-                    <TextBox type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.newPassword} onChangeText={(newPassword) => this.setState({newPassword})} autoCapitalize={"none"} secureTextEntry={true}/>
-                    <TextBox type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} autoCapitalize={"none"} secureTextEntry={true}/>
+                    <TouchableOpacity><Text style={loginStyles.link2} onPress={() => {this.setState({screen: 'inicio'})}}>Volver</Text></TouchableOpacity>
+                    <TextBox key='correo' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.user} onChangeText={(user) => this.setState({user})} autoCapitalize={"none"}/>
+                    <TextBox key='password' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} autoCapitalize={"none"} secureTextEntry={true}/>
+                    <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} autoCapitalize={"none"} secureTextEntry={true}/>
                     <Text style={loginStyles.etiquetaIncorrecta}>{state.outcome}</Text>
-                    <Button iconLeft={false} iconRight={false} text={"Restablecer"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.resetPassword()}/>
+                    <Button key='resetButton' iconLeft={false} iconRight={false} text={"Restablecer"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.resetPassword()}/>
                 </ImageBackground>
             )
         if(state.screen == 'crear')
             return(
                 <ImageBackground style={loginStyles.mainContainer} source={require('../../assets/fondo.jpg')} >
                     <StatusBar backgroundColor={state.statusBarColor}/>
-                    <TouchableOpacity><Text style={loginStyles.hipervinculo2} onPress={() => {this.setState({pantalla: 'inicio'})}}>Volver</Text></TouchableOpacity>
-                    <Text style={loginStyles.etiqueta2}>Nombre:</Text>
-                    <TextInput style={loginStyles.cajaTexto} value={state.nombre} onChangeText={(nombre) => this.setState({nombre})} autoCapitalize="none" placeholder="Escribe tu nombre(s)..." placeholderTextColor={"grey"}/>
-                    <Text style={loginStyles.etiqueta2}>Apellidos:</Text>
-                    <TextInput style={loginStyles.cajaTexto} value={state.apellidos} onChangeText={(apellidos) => this.setState({apellidos})} autoCapitalize="none" placeholder="Escribe tus apellidos..." placeholderTextColor={"grey"}/>
-                    <Text style={loginStyles.etiqueta2}>Correo:</Text>
-                    <TextInput style={loginStyles.cajaTexto} value={state.usuario} onChangeText={(usuario) => this.setState({usuario})} autoCapitalize="none" placeholder="Escribe tu correo electronico..." placeholderTextColor={"grey"}/>
-                    <Text style={loginStyles.etiqueta2}>Contraseña:</Text>
-                    <TextInput style={loginStyles.cajaTexto} value={state.nueva} onChangeText={(nueva) => this.setState({nueva})} autoCapitalize="none" secureTextEntry={true} placeholder="Escribe tu contraeña..." placeholderTextColor={"grey"}/>
-                    <Text style={loginStyles.etiqueta2}>Confirmar Contraseña:</Text>
-                    <TextInput style={loginStyles.cajaTexto} value={state.confirma} onChangeText={(confirma) => this.setState({confirma})} autoCapitalize="none" secureTextEntry={true} placeholder="Confirma tu contraeña..." placeholderTextColor={"grey"}/>
+                    <TouchableOpacity><Text style={loginStyles.link2} onPress={() => {this.setState({screen: 'inicio'})}}>Volver</Text></TouchableOpacity>
+                    <TextBox key='name' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Nombre"} value={state.name} onChangeText={(name) => this.setState({name})} />
+                    <TextBox key='lastName' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Apellidos"} value={state.lastName} onChangeText={(lastName) => this.setState({lastName})} />
+                    <TextBox key='email' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.mail} onChangeText={(mail) => this.setState({mail})} />
+                    <TextBox key='password' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} />
+                    <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Confirma contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} />
                     <Text style={loginStyles.etiquetaIncorrecta}>{state.outcome}</Text>
-                    <TouchableHighlight style={loginStyles.boton} onPress={() => this.nuevoUsuario()}><Text style={loginStyles.botonTexto}>Registrarse</Text></TouchableHighlight>
+                    <Button key='createButton' iconLeft={false} iconRight={false} text={"Nuevo usuario"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.newUser()}/>
                 </ImageBackground>
             )
         /*if(state.screen == 'pantallas')
