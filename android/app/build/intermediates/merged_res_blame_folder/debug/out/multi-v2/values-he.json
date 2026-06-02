@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.strifecomponents.app-mergeDebugResources-26:/values-he/values-he.xml",
+            "outputFile": "com.strifecomponents.app-mergeDebugResources-20:/values-he/values-he.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\Documents\\React\\StrifeComponents\\node_modules\\react-native-date-picker\\android\\build\\intermediates\\packaged_res\\debug\\values-he\\values-he.xml",

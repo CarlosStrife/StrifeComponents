@@ -27,33 +27,6 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Zdieľať s"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Zdieľať s aplikáciou <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Zbaliť"</string>
-    <string gender="unknown" name="alert_description">Upozornenie</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">Natívna vývojárska ponuka reakcie (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">Spustené: %1$s</string>
-    <string gender="unknown" name="combobox_description">Kombinované pole</string>
-    <string gender="unknown" name="header_description">Nadpis</string>
-    <string gender="unknown" name="image_description">Obrázok</string>
-    <string gender="unknown" name="imagebutton_description">Tlačidlo, obrázok</string>
-    <string gender="unknown" name="link_description">Odkaz</string>
-    <string gender="unknown" name="menu_description">Ponuka</string>
-    <string gender="unknown" name="menubar_description">Lišta s ponukou</string>
-    <string gender="unknown" name="menuitem_description">Položka ponuky</string>
-    <string gender="unknown" name="progressbar_description">Indikátor postupu</string>
-    <string gender="unknown" name="radiogroup_description">Skupina tlačidiel na výber</string>
-    <string gender="unknown" name="rn_tab_description">Tabulátor</string>
-    <string gender="unknown" name="scrollbar_description">Lišta na posúvanie</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Hľadať"</string>
-    <string gender="unknown" name="spinbutton_description">Otočné tlačidlo</string>
-    <string gender="unknown" name="state_busy_description">obsadené</string>
-    <string gender="unknown" name="state_collapsed_description">zbalené</string>
-    <string gender="unknown" name="state_expanded_description">rozbalené</string>
-    <string gender="unknown" name="state_mixed_description">zmiešané</string>
-    <string gender="unknown" name="state_off_description">vypnuté</string>
-    <string gender="unknown" name="state_on_description">zapnuté</string>
-    <string gender="unknown" name="state_unselected_description">nevybrané</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string gender="unknown" name="summary_description">Súhrn</string>
-    <string gender="unknown" name="tablist_description">Zoznam kariet</string>
-    <string gender="unknown" name="timer_description">Časovač</string>
-    <string gender="unknown" name="toolbar_description">Panel s nástrojmi</string>
 </resources>

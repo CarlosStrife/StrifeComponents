@@ -27,30 +27,6 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Partager avec"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Partager avec <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Réduire"</string>
-    <string gender="unknown" name="alert_description">Alerte</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s en cours</string>
-    <string gender="unknown" name="combobox_description">Zone combinée</string>
-    <string gender="unknown" name="header_description">Titre</string>
-    <string gender="unknown" name="imagebutton_description">Bouton, image</string>
-    <string gender="unknown" name="link_description">Lien</string>
-    <string gender="unknown" name="menubar_description">Barre de menu</string>
-    <string gender="unknown" name="menuitem_description">Option de menu</string>
-    <string gender="unknown" name="progressbar_description">Barre de progression</string>
-    <string gender="unknown" name="radiogroup_description">Groupe de boutons radio</string>
-    <string gender="unknown" name="rn_tab_description">Onglet</string>
-    <string gender="unknown" name="scrollbar_description">Barre de déroulement</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Rechercher"</string>
-    <string gender="unknown" name="spinbutton_description">Bouton compteur circulaire</string>
-    <string gender="unknown" name="state_busy_description">en cours de traitement</string>
-    <string gender="unknown" name="state_collapsed_description">réduit</string>
-    <string gender="unknown" name="state_expanded_description">agrandi</string>
-    <string gender="unknown" name="state_mixed_description">à double état</string>
-    <string gender="unknown" name="state_off_description">désactivé</string>
-    <string gender="unknown" name="state_on_description">activé</string>
-    <string gender="unknown" name="state_unselected_description">désélectionné</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string gender="unknown" name="summary_description">Résumé</string>
-    <string gender="unknown" name="tablist_description">Liste des onglets</string>
-    <string gender="unknown" name="timer_description">Minuterie</string>
-    <string gender="unknown" name="toolbar_description">Barre d’outils</string>
 </resources>

@@ -17,3 +17,10 @@ import DatePicker from 'react-native-date-picker'
 npm install react-native-linear-gradient 
 //esto se usa para estilizarlo nada mas
 import LinearGradient from 'react-native-linear-gradient';
+
+
+tambien recomendable usar este comando
+cd android
+.\gradlew clean
+cd ..
+npx react-native run-android

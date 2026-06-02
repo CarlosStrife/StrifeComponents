@@ -27,33 +27,6 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"هم‌رسانی با"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"هم‌رسانی با <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"کوچک کردن"</string>
-    <string gender="unknown" name="alert_description">هشدار</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">واکنش منوی (%1$s) انحراف محلی</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">اجرای %1$s</string>
-    <string gender="unknown" name="combobox_description">جعبه گفتگو</string>
-    <string gender="unknown" name="header_description">سر‌صفحه</string>
-    <string gender="unknown" name="image_description">تصویر</string>
-    <string gender="unknown" name="imagebutton_description">دکمه، تصویر</string>
-    <string gender="unknown" name="link_description">پیوند</string>
-    <string gender="unknown" name="menu_description">منو</string>
-    <string gender="unknown" name="menubar_description">نوار منو</string>
-    <string gender="unknown" name="menuitem_description">مورد منو</string>
-    <string gender="unknown" name="progressbar_description">نوار پیشرفت</string>
-    <string gender="unknown" name="radiogroup_description">گروه رادیویی</string>
-    <string gender="unknown" name="rn_tab_description">برگه</string>
-    <string gender="unknown" name="scrollbar_description">نوار پیمایش</string>
     <string msgid="6264217191555673260" name="search_menu_title">"جستجو"</string>
-    <string gender="unknown" name="spinbutton_description">دکمه چرخش</string>
-    <string gender="unknown" name="state_busy_description">مشغول</string>
-    <string gender="unknown" name="state_collapsed_description">کوچک‌شده</string>
-    <string gender="unknown" name="state_expanded_description">بزرگ‌شده</string>
-    <string gender="unknown" name="state_mixed_description">ترکیب‌شده</string>
-    <string gender="unknown" name="state_off_description">خاموش</string>
-    <string gender="unknown" name="state_on_description">روشن</string>
-    <string gender="unknown" name="state_unselected_description">لغو انتخاب شد</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string gender="unknown" name="summary_description">خلاصه</string>
-    <string gender="unknown" name="tablist_description">فهرست برگه</string>
-    <string gender="unknown" name="timer_description">زمان‌سنج</string>
-    <string gender="unknown" name="toolbar_description">نوار ابزار</string>
 </resources>

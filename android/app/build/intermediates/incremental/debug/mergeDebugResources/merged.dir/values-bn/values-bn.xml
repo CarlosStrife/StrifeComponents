@@ -27,33 +27,6 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"শেয়ার করুন"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g>-এর সাথে শেয়ার করুন"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"সঙ্কুচিত করুন"</string>
-    <string gender="unknown" name="alert_description">অ্যালার্ট</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">রিয়েকশন নেটিভ ডেভেলপার মেনু (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s চলছে</string>
-    <string gender="unknown" name="combobox_description">কম্বো বক্স</string>
-    <string gender="unknown" name="header_description">শিরোনাম</string>
-    <string gender="unknown" name="image_description">ইমেজ</string>
-    <string gender="unknown" name="imagebutton_description">বোতাম, ছবি</string>
-    <string gender="unknown" name="link_description">লিঙ্ক</string>
-    <string gender="unknown" name="menu_description">মেনু</string>
-    <string gender="unknown" name="menubar_description">মেনু বার</string>
-    <string gender="unknown" name="menuitem_description">মেনু আইটেম</string>
-    <string gender="unknown" name="progressbar_description">প্রোগ্রেস বার</string>
-    <string gender="unknown" name="radiogroup_description">রেডিও গ্রুপ</string>
-    <string gender="unknown" name="rn_tab_description">ট্যাব</string>
-    <string gender="unknown" name="scrollbar_description">স্ক্রোল বার</string>
     <string msgid="6264217191555673260" name="search_menu_title">"সার্চ করুন"</string>
-    <string gender="unknown" name="spinbutton_description">স্পিন বোতাম</string>
-    <string gender="unknown" name="state_busy_description">ব্যস্ত</string>
-    <string gender="unknown" name="state_collapsed_description">ছোট করা হয়েছে</string>
-    <string gender="unknown" name="state_expanded_description">বাড়ানো হয়েছে</string>
-    <string gender="unknown" name="state_mixed_description">মিশ্র</string>
-    <string gender="unknown" name="state_off_description">বন্ধ আছে</string>
-    <string gender="unknown" name="state_on_description">চালু আছে</string>
-    <string gender="unknown" name="state_unselected_description">আনসিলেক্ট করা হয়েছে</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"৯৯৯+"</string>
-    <string gender="unknown" name="summary_description">সারসংক্ষেপ</string>
-    <string gender="unknown" name="tablist_description">ট্যাব লিস্ট</string>
-    <string gender="unknown" name="timer_description">টাইমার</string>
-    <string gender="unknown" name="toolbar_description">টুল বার</string>
 </resources>

@@ -315,7 +315,6 @@ attr subtitleTextAppearance
 attr subtitleTextColor
 attr subtitleTextStyle
 attr suggestionRowLayout
-attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -675,7 +674,6 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
-drawable ic_launcher_background
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -742,7 +740,6 @@ id accessibility_label
 id accessibility_links
 id accessibility_role
 id accessibility_state
-id accessibility_state_expanded
 id accessibility_value
 id action_bar
 id action_bar_activity_content
@@ -820,8 +817,11 @@ id icon_group
 id ifRoom
 id image
 id info
-id invalidate_transform
 id italic
+id item1
+id item2
+id item3
+id item4
 id labelled_by
 id line1
 id line3
@@ -860,7 +860,6 @@ id rn_redbox_reload_button
 id rn_redbox_report_button
 id rn_redbox_report_label
 id rn_redbox_stack
-id role
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -912,8 +911,6 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
-id transform
-id transform_origin
 id unchecked
 id uniform
 id up
@@ -921,7 +918,6 @@ id useLogo
 id view_tag_instance_handle
 id view_tag_native_id
 id view_tree_lifecycle_owner
-id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible_removing_fragment_view_tag
@@ -989,8 +985,9 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu example_menu
+menu example_menu2
 mipmap ic_launcher
-mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -1025,11 +1022,14 @@ string androidx_startup
 string app_name
 string catalyst_change_bundle_location
 string catalyst_copy_button
+string catalyst_debug
+string catalyst_debug_chrome
+string catalyst_debug_chrome_stop
 string catalyst_debug_connecting
 string catalyst_debug_error
 string catalyst_debug_open
-string catalyst_dev_menu_header
-string catalyst_dev_menu_sub_header
+string catalyst_debug_stop
+string catalyst_devtools_open
 string catalyst_dismiss_button
 string catalyst_heap_capture
 string catalyst_hot_reloading
@@ -1039,7 +1039,7 @@ string catalyst_hot_reloading_stop
 string catalyst_inspector
 string catalyst_inspector_stop
 string catalyst_loading_from_url
-string catalyst_open_debugger_error
+string catalyst_open_flipper_error
 string catalyst_perf_monitor
 string catalyst_perf_monitor_stop
 string catalyst_reload
@@ -1373,7 +1373,6 @@ style Theme_FullScreenDialogAnimatedFade
 style Theme_FullScreenDialogAnimatedSlide
 style Theme_ReactNative_AppCompat_Light
 style Theme_ReactNative_AppCompat_Light_NoActionBar_FullScreen
-style Theme_ReactNative_TextInput_DefaultBackground
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -1512,7 +1511,6 @@ styleable SimpleDraweeView actualImageResource actualImageUri backgroundImage fa
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
-styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable TextAppearance android_textSize android_typeface android_textStyle android_textColor android_textColorHint android_textColorLink android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_fontFamily android_textFontWeight fontFamily fontVariationSettings textAllCaps textLocale
 styleable Theme numberPickerStyle

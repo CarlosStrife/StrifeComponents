@@ -27,33 +27,6 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"ਇਸ ਨਾਲ ਸਾਂਝਾ ਕਰੋ"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> ਨਾਲ ਸਾਂਝਾ ਕਰੋ"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"ਸਮੇਟੋ"</string>
-    <string gender="unknown" name="alert_description">ਸੁਚੇਤਨਾ</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">ਨੇਟਿਵ ਡਿਵੈ ਮੀਨੂ (%1$s) \'ਤੇ ਪ੍ਰਤੀਕਿਰਿਆ ਦਿਓ</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s ਚੱਲ ਰਿਹਾ ਹੈ</string>
-    <string gender="unknown" name="combobox_description">ਕੋਂਬੋ ਬਾਕਸ</string>
-    <string gender="unknown" name="header_description">ਸਿਰਲੇਖ</string>
-    <string gender="unknown" name="image_description">ਚਿੱਤਰ</string>
-    <string gender="unknown" name="imagebutton_description">ਬਟਨ, ਚਿੱਤਰ</string>
-    <string gender="unknown" name="link_description">ਲਿੰਕ</string>
-    <string gender="unknown" name="menu_description">ਮੀਨੂ</string>
-    <string gender="unknown" name="menubar_description">ਮੀਨੂ ਬਾਰ</string>
-    <string gender="unknown" name="menuitem_description">ਮੀਨੂ ਆਈਟਮ</string>
-    <string gender="unknown" name="progressbar_description">ਪ੍ਰੋਗਰੈੱਸ ਬਾਰ</string>
-    <string gender="unknown" name="radiogroup_description">ਰਡੀਓ ਗਰੁੱਪ</string>
-    <string gender="unknown" name="rn_tab_description">ਟੈਬ</string>
-    <string gender="unknown" name="scrollbar_description">ਸਕ੍ਰੋਲ ਬਾਰ</string>
     <string msgid="6264217191555673260" name="search_menu_title">"ਖੋਜ"</string>
-    <string gender="unknown" name="spinbutton_description">\'ਘੁੰਮਾਓ\' ਬਟਨ</string>
-    <string gender="unknown" name="state_busy_description">ਵਿਅਸਤ</string>
-    <string gender="unknown" name="state_collapsed_description">ਸਮੇਟਿਆ ਗਿਆ</string>
-    <string gender="unknown" name="state_expanded_description">ਵਿਸਤਾਰ ਕੀਤਾ ਗਿਆ</string>
-    <string gender="unknown" name="state_mixed_description">ਮਿਕਸਡ</string>
-    <string gender="unknown" name="state_off_description">ਬੰਦ</string>
-    <string gender="unknown" name="state_on_description">ਚਾਲੂ</string>
-    <string gender="unknown" name="state_unselected_description">ਚੋਣ ਹਟਾਈ ਗਈ</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string gender="unknown" name="summary_description">ਸਾਰ</string>
-    <string gender="unknown" name="tablist_description">ਟੈਬ ਸੂਚੀ</string>
-    <string gender="unknown" name="timer_description">ਟਾਈਮਰ</string>
-    <string gender="unknown" name="toolbar_description">ਟੂਲ ਬਾਰ</string>
 </resources>
