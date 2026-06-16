@@ -17,7 +17,7 @@ export default class Main extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            pantalla: 'main',
+            pantalla: 'prueba',
             cajaTexto: '',
             date: '',
             option: 'nada',
@@ -174,6 +174,10 @@ export default class Main extends React.Component{
                             <Login logoBool={true}/>
                         </LinearGradient>
                     </ScrollView>
+                )
+            else if(state.pantalla == 'prueba')
+                return(
+                    <Login logoBool={true}/>
                 )
     }
 

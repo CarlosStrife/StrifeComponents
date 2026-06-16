@@ -24,3 +24,24 @@ cd android
 .\gradlew clean
 cd ..
 npx react-native run-android
+
+
+para instalar el navegador de pantallas de este proyecto empezamos aqui:
+
+ npm install @react-navigation/native@6.1.18
+ npm install react-native-screens@3.20.0
+ npm install react-native-safe-area-context@4.5.0
+ npm install react-native-gesture-handler@2.9.0
+ npm install react-native-reanimated@2.14.4
+ npm install @react-navigation/drawer@6.7.2
+
+
+cambia el archivo babel.config.js por 
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  plugins: [
+    "react-native-reanimated/plugin",
+  ],
+};
+y resetea con 
+npx react-native start --reset-cache

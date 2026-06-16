@@ -1,9 +1,16 @@
+
 import React from 'react';
 import { View, ImageBackground, StatusBar, Image, TouchableOpacity, Text, TouchableHighlight, TextInput} from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { loginStyles } from "./loginStyles";
 import TextBox from '../textBox/textBox';
 import Button from '../button/button';
+import Example from '../../screens/example';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import { Menu } from "./menu";
 
+const Drawer = createDrawerNavigator();
   
 export default class Login extends React.Component{
     constructor(props){
@@ -176,7 +183,7 @@ export default class Login extends React.Component{
     }
 
     componentDidMount(){
-        
+        //este sirve para precargar cosas
     }
 
 
@@ -221,23 +228,17 @@ export default class Login extends React.Component{
                     <Button key='createButton' iconLeft={false} iconRight={false} text={"Nuevo usuario"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.newUser()}/>
                 </ImageBackground>
             )
-        /*if(state.screen == 'pantallas')
+        if(state.screen == 'pantallas')
             return(
                 <NavigationContainer>
                     <StatusBar backgroundColor={state.statusBarColor}/>
                     {
-                    <Drawer.Navigator drawerContent={props => <Menu cerrarSesion={this.cerrarSesion.bind(this)} {... props} idUsuario={state.idUsuario} nombreUsuario={state.nombreUsuario} correoUsuario={state.correoUsuario} sucursal={state.sucursal} idSucursal={state.idSucursal} status={state.status}/>} initialRouteName="Principal" screenOptions={{drawerStyle: loginStyles.menu}}>
-                        <Drawer.Screen initialParams={{idUsuario: state.idUsuario, nombreUsuario: state.nombreUsuario, correoUsuario: state.correoUsuario, sucursal: state.sucursal, idSucursal: state.idSucursal, status: state.status, contador: 1}} name="Principal" component={Principal} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Icon name="home" size={48} color="white" style={loginStyles.tituloIconoMenu}/></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
-                        <Drawer.Screen initialParams={{idUsuario: state.idUsuario, nombreUsuario: state.nombreUsuario, correoUsuario: state.correoUsuario, sucursal: state.sucursal, idSucursal: state.idSucursal, status: state.status, contador: 1}} name="Estado De Cuenta" component={EstadoCuenta} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Text style={loginStyles.tituloMenu}>Estado De Cuenta</Text></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
-                        <Drawer.Screen initialParams={{idUsuario: state.idUsuario, nombreUsuario: state.nombreUsuario, correoUsuario: state.correoUsuario, sucursal: state.sucursal, idSucursal: state.idSucursal, status: state.status, contador: 1}} name="Vales" component={Vales} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Text style={loginStyles.tituloMenu}>Vales</Text></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
-                        <Drawer.Screen initialParams={{idUsuario: state.idUsuario, nombreUsuario: state.nombreUsuario, correoUsuario: state.correoUsuario, sucursal: state.sucursal, idSucursal: state.idSucursal, status: state.status, contador: 1}} name="Ahorro" component={Ahorro} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Text style={loginStyles.tituloMenu}>Ahorro</Text></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
-                        <Drawer.Screen initialParams={{idUsuario: state.idUsuario, nombreUsuario: state.nombreUsuario, correoUsuario: state.correoUsuario, sucursal: state.sucursal, idSucursal: state.idSucursal, status: state.status, contador: 1}} name="Prestamos" component={Prestamos} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Text style={loginStyles.tituloMenu}>Prestamos</Text></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
-                        <Drawer.Screen initialParams={{idUsuario: state.idUsuario, nombreUsuario: state.nombreUsuario, correoUsuario: state.correoUsuario, sucursal: state.sucursal, idSucursal: state.idSucursal, status: state.status, contador: 1}} name="Clientes" component={Clientes} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Text style={loginStyles.tituloMenu}>Clientes</Text></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
-                        <Drawer.Screen initialParams={{idUsuario: state.idUsuario, nombreUsuario: state.nombreUsuario, correoUsuario: state.correoUsuario, sucursal: state.sucursal, idSucursal: state.idSucursal, status: state.status, contador: 1}} name="Capacitaciones" component={Capacitaciones} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Text style={loginStyles.tituloMenu}>Capacitaciones</Text></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
+                    <Drawer.Navigator drawerContent={props => <Menu closeSesion={this.closeSession.bind(this)} {... props} idUsuario={"1"} nombreUsuario={"nombre"} correoUsuario={"correo"} sucursal={"suc"} idSucursal={"idsuc"} status={"estatus"}/>} initialRouteName="Ejemplo" screenOptions={{drawerStyle: loginStyles.menu}}>
+                        <Drawer.Screen initialParams={{idUsuario: "hola", contador: 1}} name="Ejemplo" component={Example} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Icon name="home" size={48} color="white" style={loginStyles.tituloIconoMenu}/></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
                     </Drawer.Navigator>
                     }
                 </NavigationContainer>
-            )*/
+            )
     }
 
 };

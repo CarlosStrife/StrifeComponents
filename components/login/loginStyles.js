@@ -77,7 +77,7 @@ export const loginStyles = StyleSheet.create({
     },
     menu:{
         backgroundColor: 'black',
-        width: Math.round(Dimensions.get('window').width)*.70,
+        width: Math.round(Dimensions.get('window').width)*.80,
     },
     menuTitleContainer: {
         width: Math.round(Dimensions.get('window').height*.332),
