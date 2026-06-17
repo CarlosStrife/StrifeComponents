@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, ImageBackground, StatusBar, Image, TouchableOpacity, Text, TouchableHighlight, TextInput} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
@@ -178,7 +177,6 @@ export default class Login extends React.Component{
         this.setState({
             pantalla: 'inicio',
             outcome: "",
-
         });
     }
 
@@ -210,7 +208,7 @@ export default class Login extends React.Component{
                     <TextBox key='correo' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.user} onChangeText={(user) => this.setState({user})} autoCapitalize={"none"}/>
                     <TextBox key='password' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} autoCapitalize={"none"} secureTextEntry={true}/>
                     <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} autoCapitalize={"none"} secureTextEntry={true}/>
-                    <Text style={loginStyles.etiquetaIncorrecta}>{state.outcome}</Text>
+                    <Text style={loginStyles.labelWrong}>{state.outcome}</Text>
                     <Button key='resetButton' iconLeft={false} iconRight={false} text={"Restablecer"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.resetPassword()}/>
                 </ImageBackground>
             )
@@ -224,20 +222,22 @@ export default class Login extends React.Component{
                     <TextBox key='email' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.mail} onChangeText={(mail) => this.setState({mail})} />
                     <TextBox key='password' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} />
                     <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Confirma contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} />
-                    <Text style={loginStyles.etiquetaIncorrecta}>{state.outcome}</Text>
+                    <Text style={loginStyles.labelWrong}>{state.outcome}</Text>
                     <Button key='createButton' iconLeft={false} iconRight={false} text={"Nuevo usuario"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.newUser()}/>
                 </ImageBackground>
             )
         if(state.screen == 'pantallas')
             return(
-                <NavigationContainer>
-                    <StatusBar backgroundColor={state.statusBarColor}/>
-                    {
-                    <Drawer.Navigator drawerContent={props => <Menu closeSesion={this.closeSession.bind(this)} {... props} idUsuario={"1"} nombreUsuario={"nombre"} correoUsuario={"correo"} sucursal={"suc"} idSucursal={"idsuc"} status={"estatus"}/>} initialRouteName="Ejemplo" screenOptions={{drawerStyle: loginStyles.menu}}>
-                        <Drawer.Screen initialParams={{idUsuario: "hola", contador: 1}} name="Ejemplo" component={Example} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.contenedorTituloMenu}><Icon name="home" size={48} color="white" style={loginStyles.tituloIconoMenu}/></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="white" style={loginStyles.tituloIconoDrawer}/></TouchableOpacity>})} />
-                    </Drawer.Navigator>
-                    }
-                </NavigationContainer>
+                <View style={{backgroundColor: 'red',width: '100%',height: 550}}>
+                    <NavigationContainer>
+                        <StatusBar backgroundColor={state.statusBarColor}/>
+                        {
+                        <Drawer.Navigator drawerContent={props => <Menu closeSesion={this.closeSession.bind(this)} {... props} idUsuario={"1"} nombreUsuario={"nombre"} correoUsuario={"correo"} sucursal={"suc"}/>} initialRouteName="Ejemplo" screenOptions={{drawerStyle: loginStyles.menu}}>
+                            <Drawer.Screen initialParams={{idUsuario: "hola", contador: 1}} name="Ejemplo" component={Example} options={({ navigation }) => ({headerTransparent: true,headerTintColor: '#fff',headerTitle: (props) => <View style={loginStyles.menuTitleContainer}><Icon name="home" size={48} color="red" style={loginStyles.menuIconContainer}/></View>,headerLeft: props => <TouchableOpacity onPress={navigation.toggleDrawer}><Icon name="bars" size={48} color="grey" style={loginStyles.drawerIconTitle}/></TouchableOpacity>})} />
+                        </Drawer.Navigator>
+                        }
+                    </NavigationContainer>
+                </View>
             )
     }
 

@@ -17,7 +17,7 @@ export default class Main extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            pantalla: 'prueba',
+            pantalla: 'main',
             cajaTexto: '',
             date: '',
             option: 'nada',

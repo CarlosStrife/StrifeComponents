@@ -34,6 +34,12 @@ export const loginStyles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20
     },
+    link:{
+        marginTop: Math.round(Dimensions.get('window').height)*.02,
+        color: 'white',
+        fontSize: 20,
+        textDecorationLine: 'underline',
+    },
     label: {
         marginTop: Math.round(Dimensions.get('window').height)*.05,
         color: '#088395',
@@ -49,12 +55,6 @@ export const loginStyles = StyleSheet.create({
         color: 'red',
         fontSize: Math.round(Dimensions.get('window').height)*.03,
         textAlign: 'center',
-    },
-    link:{
-        marginTop: Math.round(Dimensions.get('window').height)*.02,
-        color: 'white',
-        fontSize: 20,
-        textDecorationLine: 'underline',
     },
     link2:{
         marginTop: Math.round(Dimensions.get('window').height)*.02,
@@ -80,7 +80,8 @@ export const loginStyles = StyleSheet.create({
         width: Math.round(Dimensions.get('window').width)*.80,
     },
     menuTitleContainer: {
-        width: Math.round(Dimensions.get('window').height*.332),
+        width: Math.round(Dimensions.get('window').width*.70),
+        
     },
     menuIconContainer:{
         alignSelf: Platform.OS === 'ios' ? 'auto' : 'center',

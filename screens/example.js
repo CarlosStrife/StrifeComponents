@@ -14,12 +14,14 @@ export default class Example extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
+        if(this.props.route.params.contador == 1){
+        }
         this.props.route.params.contador++;
     }
     render(){
         const state = this.state;
         return(
-            <View>
+            <View style={{padding: 100}}>
                 <ScrollView>
                     <Text maxFontSizeMultiplier={1}>ESTA ES UNA PANTALLA DE EJEMPLO</Text>                        
                 </ScrollView>
