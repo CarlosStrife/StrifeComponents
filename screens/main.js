@@ -11,6 +11,7 @@ import Radio from '../components/radio/radio';
 import ProgressBar from '../components/progressBar/progressBar';
 import LinearGradient from 'react-native-linear-gradient';
 import Login from '../components/login/login';
+import DeleteAccount from '../components/deleteAccount/deleteAccount';
 
   
 export default class Main extends React.Component{
@@ -66,7 +67,9 @@ export default class Main extends React.Component{
                             <Button onPress={() => this.cambiarPantalla("switch")} text='SWITCH'  containerStyle={{backgroundColor: 'cyan'}} textStyle={{color: 'black'}}/>
                             <Button onPress={() => this.cambiarPantalla("radio")} text='RADIOS'  containerStyle={{backgroundColor: 'purple'}} textStyle={{color: 'white'}}/>
                             <Button onPress={() => this.cambiarPantalla("progressBar")} text='BARRA PROGRESIVA'  containerStyle={{backgroundColor: 'brown'}} textStyle={{color: 'white'}}/>
-                            <Button onPress={() => this.cambiarPantalla("login")} text='LOGIN'  containerStyle={{backgroundColor: 'pink'}} textStyle={{color: 'black'}}/>
+                            <Button onPress={() => this.cambiarPantalla("modal")} text='MODAL'  containerStyle={{backgroundColor: 'navy'}} textStyle={{color: 'white'}}/>
+                            <Button onPress={() => this.cambiarPantalla("login")} text='INICIAR SESION'  containerStyle={{backgroundColor: 'pink'}} textStyle={{color: 'black'}}/>
+                            <Button onPress={() => this.cambiarPantalla("deleteAccount")} text='BORRAR CUENTA'  containerStyle={{backgroundColor: 'grey'}} textStyle={{color: 'orange'}}/>
                         </LinearGradient>
                         
                     </ScrollView>
@@ -158,9 +161,20 @@ export default class Main extends React.Component{
                     <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#FFFFC7'}]} contentContainerStyle={{alignItems: 'center'}}>
                         <LinearGradient colors={['#548687','#473335']} style={mainStyles.container2}>
                             <View>
-                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={false} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
                             </View>
                             <ProgressBar />
+                        </LinearGradient>
+                    </ScrollView>
+                )
+            else if(state.pantalla == 'modal')
+                return(
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#2274A5'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#059b26','#FADF63', '#014bf7']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                                <Button onPress={() => this.alerta()} iconLeft={false} iconRight={false} text='MODAL' containerStyle={{backgroundColor: 'yellow'}} textStyle={{color: 'blue'}}/>
+                            </View>
                         </LinearGradient>
                     </ScrollView>
                 )
@@ -172,6 +186,17 @@ export default class Main extends React.Component{
                                 <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
                             </View>
                             <Login logoBool={true}/>
+                        </LinearGradient>
+                    </ScrollView>
+                )
+            else if(state.pantalla == 'deleteAccount')
+                return(
+                    <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#f294ff'}]} contentContainerStyle={{alignItems: 'center'}}>
+                        <LinearGradient colors={['#548687','#8d96e4']} style={mainStyles.container2}>
+                            <View>
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                            </View>
+                            <DeleteAccount />
                         </LinearGradient>
                     </ScrollView>
                 )
