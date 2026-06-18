@@ -3,6 +3,7 @@ import { ScrollView, Text, View,} from "react-native";
 import { mainStyles } from "../styles/main";
 import TextBox from '../components/textBox/textBox';
 import Button from '../components/button/button';
+import Window from '../components/modal/window';
 import DateInput from '../components/dateInput/dateInput';
 import DropDownSelector from '../components/dropDownSelector/dropDownSelector';
 import Table from '../components/table/table';
@@ -23,6 +24,7 @@ export default class Main extends React.Component{
             date: '',
             option: 'nada',
             value: true,
+            modalVisible: true,
         };
     }
     
@@ -50,6 +52,10 @@ export default class Main extends React.Component{
 
     pressed(option){
         this.setState({value: option});
+    }
+
+    setModalVisible(visible) {
+        this.setState({modalVisible: visible});
     }
 
     render(){
@@ -173,7 +179,8 @@ export default class Main extends React.Component{
                         <LinearGradient colors={['#059b26','#FADF63', '#014bf7']} style={mainStyles.container2}>
                             <View>
                                 <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
-                                <Button onPress={() => this.alerta()} iconLeft={false} iconRight={false} text='MODAL' containerStyle={{backgroundColor: 'yellow'}} textStyle={{color: 'blue'}}/>
+                                <Button onPress={() => this.setModalVisible(true)} iconLeft={false} iconRight={false} text='MODAL' containerStyle={{backgroundColor: 'yellow'}} textStyle={{color: 'blue'}}/>
+                                <Window modalVisible={state.modalVisible} setModalVisible={this.setModalVisible.bind(this)}/>
                             </View>
                         </LinearGradient>
                     </ScrollView>

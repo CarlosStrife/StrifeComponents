@@ -45,17 +45,14 @@ export default class DropDownSelector extends React.Component{
     }
 
     searchCoincidences(text) {
-        if(this.state.datas[0] != undefined){
-            var array = [];
-            this.state.datas.map((option,index) => {
-                if(option.toString().toLowerCase().includes(text.toLowerCase()))
-                    array.push(option.toString());
-            })
-            this.setState({
-                text: text.toLowerCase(),
-                datasAux: array,
-            });
-        }
+        const datasAux = this.state.datas.filter(option =>
+            option.toString().toLowerCase().includes(text.toLowerCase())
+        );
+
+        this.setState({
+            text,
+            datasAux
+        });
     }
 
     showOptions(){

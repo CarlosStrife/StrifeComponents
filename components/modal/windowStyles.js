@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-export const modalStyles = StyleSheet.create({
+export const windowStyles = StyleSheet.create({
     cargador:{
         width: Math.round(Dimensions.get('window').width)*.25, 
         height: Math.round(Dimensions.get('window').height)*.1,
@@ -15,7 +15,7 @@ export const modalStyles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#222831',
     },
-    contenedorModal:{
+    container:{
         width: Math.round(Dimensions.get('window').width)*.97,
         height: Math.round(Dimensions.get('window').height)*.98,
         backgroundColor:'transparent',
@@ -24,7 +24,7 @@ export const modalStyles = StyleSheet.create({
         justifyContent: "center",
         padding: 2
     },
-    fondoModal:{
+    backgroundModal:{
         width: Math.round(Dimensions.get('window').width)*.97,
         height: Math.round(Dimensions.get('window').height)*.70,
         padding: 5, 
