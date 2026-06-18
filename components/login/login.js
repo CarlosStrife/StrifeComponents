@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ImageBackground, StatusBar, Image, TouchableOpacity, Text, TouchableHighlight, TextInput} from "react-native";
+import { View, ImageBackground, StatusBar, Image, TouchableOpacity, Text,} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { loginStyles } from "./loginStyles";
@@ -207,7 +207,7 @@ export default class Login extends React.Component{
                     <TouchableOpacity><Text style={loginStyles.link2} onPress={() => {this.setState({screen: 'inicio'})}}>Volver</Text></TouchableOpacity>
                     <TextBox key='correo' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.user} onChangeText={(user) => this.setState({user})} autoCapitalize={"none"}/>
                     <TextBox key='password' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} autoCapitalize={"none"} secureTextEntry={true}/>
-                    <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} autoCapitalize={"none"} secureTextEntry={true}/>
+                    <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Confirmar"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} autoCapitalize={"none"} secureTextEntry={true}/>
                     <Text style={loginStyles.labelWrong}>{state.outcome}</Text>
                     <Button key='resetButton' iconLeft={false} iconRight={false} text={"Restablecer"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.resetPassword()}/>
                 </ImageBackground>
@@ -221,7 +221,7 @@ export default class Login extends React.Component{
                     <TextBox key='lastName' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Apellidos"} value={state.lastName} onChangeText={(lastName) => this.setState({lastName})} />
                     <TextBox key='email' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Correo"} value={state.mail} onChangeText={(mail) => this.setState({mail})} />
                     <TextBox key='password' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Contraseña"} value={state.password} onChangeText={(password) => this.setState({password})} />
-                    <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Confirma contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})} />
+                    <TextBox key='confirmPassword' type='2' label={false} inputStyle={loginStyles.textBox} placeHolder={"Confirma contraseña"} value={state.confirmPassword} onChangeText={(confirmPassword) => this.setState({confirmPassword})}  autoCapitalize={"none"} secureTextEntry={true}/>
                     <Text style={loginStyles.labelWrong}>{state.outcome}</Text>
                     <Button key='createButton' iconLeft={false} iconRight={false} text={"Nuevo usuario"} containerStyle={loginStyles.button} textStyle={loginStyles.buttonText} onPress={() => this.newUser()}/>
                 </ImageBackground>

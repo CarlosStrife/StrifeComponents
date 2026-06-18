@@ -24,7 +24,7 @@ export default class Main extends React.Component{
             date: '',
             option: 'nada',
             value: true,
-            modalVisible: true,
+            modalVisible: false,
         };
     }
     
@@ -167,7 +167,7 @@ export default class Main extends React.Component{
                     <ScrollView style={[mainStyles.mainContainer,{backgroundColor: '#FFFFC7'}]} contentContainerStyle={{alignItems: 'center'}}>
                         <LinearGradient colors={['#548687','#473335']} style={mainStyles.container2}>
                             <View>
-                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={false} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
+                                <Button onPress={() => this.cambiarPantalla("main")} iconLeft={true} leftColor='black' leftSize={22} leftSymbol='reply-all' containerStyle={{backgroundColor: 'white',borderWidth:1}} />
                             </View>
                             <ProgressBar />
                         </LinearGradient>
