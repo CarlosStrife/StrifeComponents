@@ -5,6 +5,12 @@ npm i react-native-vector-icons iconos de vectoricons
 (para android hay que agregar esta linea en android/app/build.gradle hasta arriba)
 apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 import Icon from 'react-native-vector-icons/FontAwesome5';
+agregar el modulo react-native.config.js con esto dentro en la raiza del proyecto
+module.exports = {
+  assets: ['./node_modules/react-native-vector-icons/Fonts'],
+};
+y correr el siguiente comando tambien o saldran iconos raros
+npx react-native-asset
 
 
 
